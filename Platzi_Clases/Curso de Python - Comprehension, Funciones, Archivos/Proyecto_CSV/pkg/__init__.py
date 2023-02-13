@@ -1,1 +1,0 @@
-print("\nPROYECTO: Libros de Ficcion y No-Ficcion mas Vendidos desde 2009 - 2019 en Amazon")
