@@ -22,11 +22,15 @@ def round_winner(player, cpu):
         return 0
     elif player == "piedra" and cpu == "tijeras":
         return 1
+    elif player == "piedra" and cpu == "papel":
+        return 2
     elif player == "papel" and cpu == "piedra":
         return 1
+    elif player == "papel" and cpu == "tijeras":
+        return 2
     elif player == "tijeras" and cpu == "papel":
         return 1
-    else:
+    elif player == "tijeras" and cpu == "piedra":
         return 2
     
 
@@ -35,18 +39,19 @@ def round_winner(player, cpu):
 def game():
     player_score = 0
     cpu_score = 0
+    player_moveset = ['piedra', 'papel', 'tijeras']
     
-    while player_score < 3 or cpu_score < 3:
-        player_move = input("Piedra, Papel o Tijeras? ")
+    while player_score < 2 and cpu_score < 2:
+        player_move = input("Piedra, Papel o Tijeras? \n")
         player_move = player_move.lower()
 
-        if player_move != "piedra" or player_move != "papel" or player_move != "tijeras":
-            print("Error: Movimiento ingresado es invalido... Punto para la CPU!\n")
+        if player_move not in player_moveset:
+            print("Error: Movimiento ingresado es invalido... Punto para la CPU!\n\n")
             cpu_score += 1
         else:
             cpu_move = cpu_movements()
-            player_move = player_move.title()
             print(cpu_move)
+            cpu_move = cpu_move.lower()
 
             round = round_winner(player_move, cpu_move)
             if round == 0:
@@ -56,7 +61,7 @@ def game():
                 player_score += 1
             else:
                 print("Punto: CPU\n")
-                player_score += 1
+                cpu_score += 1
 
     return player_score, cpu_score
 
