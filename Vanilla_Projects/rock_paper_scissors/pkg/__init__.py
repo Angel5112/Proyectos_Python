@@ -1,0 +1,1 @@
+print("*****" * 5 + " " + "ROCK, PAPER, SCISSORS" + " " + "*****" * 5)
