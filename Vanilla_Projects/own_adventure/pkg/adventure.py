@@ -4,13 +4,13 @@
 
 def ending_options(beg, midd, end):
     if beg == 'wake up' and midd == 'eat the food' and end == 'visit your family':
-        print("Congratulations! You live a normal life!\n")
+        print("\nCongratulations! You live a normal life!\n")
     elif beg == 'turn on the lights' and midd == 'get out without eating' and end == 'buy some stocks':
-        print("Your life is rather unique!\n")
+        print("\nYour life is rather unique!\n")
     elif beg == 'keep sleeping' and midd == 'order some food' and end == 'travel to another country':
-        print("You are living a one of a kind life!\n")
+        print("\nYou are living a one of a kind life!\n")
     else:
-        print("Sorry, but you do not qualify... maybe selecting the same array of options works better...?\n")
+        print("\nSorry, but you do not qualify... maybe selecting the same array of options works better...?\n")
 
 
 
@@ -36,24 +36,25 @@ def game():
     }
 
     while True:
-        decision = input("Do you want go play the game? (1 = Yes, 0 = No)\n")
+        decision = int(input("Do you want go play the game? (1 = Yes, 0 = No)\n"))
         if decision == 1:
-            action = input("What do you want to do?\n 1. Wake up\n 2. Turn on the lights\n 3. Keep sleeping ? \n")
-            beg = action
+            action = input("\nWhat do you want to do?\n 1. Wake up\n 2. Turn on the lights\n 3. Keep sleeping ? \n\n")
+            beg = action.lower()
             
-            action = input("What do you want to do?\n 1. Eat the food\n 2. Get out without eating\n 3. Order some food\n")
-            midd = action
+            action = input("\nWhat do you want to do?\n 1. Eat the food\n 2. Get out without eating\n 3. Order some food\n\n")
+            midd = action.lower()
             
 
-            action = input("What do you want to do?\n 1. Visit your family\n 2. Buy some stocks\n 3. Travel to another country\n")
-            end = action
+            action = input("\nWhat do you want to do?\n 1. Visit your family\n 2. Buy some stocks\n 3. Travel to another country\n\n")
+            end = action.lower()
             
+            print("\n")
             print(beginning[beg])
             print(mid[midd])
             print(ending[end])
 
             ending_options(beg.lower(), midd.lower(), end.lower())
         else:
-            print("*****" * 5 + " Thanks for playing! " + "*****" * 5)
+            print("\n" + "*****" * 5 + " Thanks for playing! " + "*****" * 5)
             break
 
