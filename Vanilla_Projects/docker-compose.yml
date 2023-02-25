@@ -1,0 +1,7 @@
+services:
+  vanilla_projects:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/Vanilla_Projects
